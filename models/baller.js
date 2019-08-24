@@ -11,10 +11,10 @@ var ballerSchema = new mongoose.Schema({
     email: String,
     team: String,
     avatar: String,
-    facts: [commentSchema],
+    comments: [commentSchema],
     googleId: String
   }, {
     timestamps: true
   });
 
-  module.exports = mongoose.model('Baller', ballerSchema)
+  module.exports = mongoose.model('Baller', ballerSchema);

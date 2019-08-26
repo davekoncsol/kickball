@@ -39,18 +39,21 @@
                   
                   <span class="baller-name"><%= baller.name %></span>
                   <img class="avatar" src="<%= baller.avatar %>">
-                  <% if (baller.team) { %><span class="badge white">SEI <%= baller.team %></span><% } %>
+                  <% if (baller.team) { %><span class="badge white"> 
+                    TEAM:<%= baller.team %></span><% } %>
                 </span>
                 <a href="/ballers/<%= baller._id %>">Player Profile</a>
               </div>
               <ul class="collection">
                 <% baller.comments.forEach(function(comment) { %>
-                  <li class="collection-item blue-grey-text text-darken-2"><%- comment.text %></li>
+                  <li class="collection-item blue-grey-text text-darken-2"><%- comment.text %> 
+                  
+                  </li>
                 <% }) %>
               </ul>
-              <% if (baller._id.equals(user && user._id)) { %>
+              <% if (user) { %>
                 <div class="card-action">
-                  <form action="/comments" method="POST">
+                  <form action="/<%= baller._id%>/comments" method="POST">
                     <input type="text" name="text" class="white-text">
                     <button type="submit" class="btn white-text">Add Comment</button>
                   </form>

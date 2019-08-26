@@ -9,7 +9,10 @@ var commentSchema = new mongoose.Schema({
 var ballerSchema = new mongoose.Schema({
     name: String,
     email: String,
-    team: String,
+    team: {type: String, default: 'Please add team'},
+    runs: String,
+    funFacts: String,
+    hometown: String,
     avatar: String,
     comments: [commentSchema],
     googleId: String

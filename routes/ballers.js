@@ -6,6 +6,7 @@ var ballersCtrl = require('../controllers/ballers')
 router.get('/ballers', ballersCtrl.index);
 
 router.get('/ballers/:id', ballersCtrl.show);
+router.get('/ballers/:id/edit', ballersCtrl.edit);
 
 // POST /facts
 // We will already have access to the logged in student on

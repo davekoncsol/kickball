@@ -10,7 +10,7 @@ module.exports = {
 }
 
 function show(req,res){
-    Baller.findById(req.params.id, function(err, baller){
+    Baller.findById(req.params.id).populate('comments').exec(function(err, baller){
       let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
       let sortKey = req.query.sort || 'name';
       Baller.find(modelQuery)
@@ -51,12 +51,15 @@ function index(req, res, next) {
     })
     
   }
+
+  function edit(req, res){
+    res.render('ballers/edit')
+
+  }
   
   function delComment(req, res, next) {
   
   }
 
-  function edit(req,res){
-    
-  }
+ 
   

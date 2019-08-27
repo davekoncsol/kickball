@@ -5,7 +5,7 @@ html, * {
 
 body {
   
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 200px 800px;
@@ -13,8 +13,14 @@ body {
   
 }
 
+
+
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+a:hover {
+  text-shadow: 2px 2px 5px #555555;
 }
 
 .avatar {
@@ -34,7 +40,7 @@ a {
   display: flex;
   grid-column: span 2;
   border: solid black 10px;
-  justify-content: space-between;
+  justify-content: space-around;
  align-items: center;
 }
 
@@ -68,8 +74,9 @@ a {
 
 ul {
   text-align: right;
-  text-overflow: clip ;
-  list-style-type:none;
+  word-wrap: break-word;
+  list-style-type: none;
+  width:760px;
   
   
 }
@@ -81,3 +88,28 @@ ul {
   align-items: center;
 
 }
+.btm-comment {
+
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    text-align: right;
+  }
+  
+  .btn-comment:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+  .addcomm {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .baller-name, .baller-team{
+    font-size: 40px;
+
+  }
+
+  .logos *{
+    height: 100px;
+  }

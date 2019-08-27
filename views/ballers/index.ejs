@@ -32,36 +32,28 @@
           <img class="avatar" src="<%= baller.avatar %>">
           <a href="/ballers/<%= baller._id %>">
             <span class="baller-name"><%= baller.name %></span></a>
-          <% if (baller.team) { %><span class="badge white">
+          <% if (baller.team) { %><span class="baller-team">
             TEAM:<%= baller.team %></span><% } %>
 
 
         </div>
 
-        <ul class="collection">
+        <ul class="">
           <% baller.comments.forEach(function(comment) { %>
           <img class="small-avatar" src="<%= comment.avatar %>">
           <a href="/ballers/<%= comment.ballerId %>">
             <%-comment.name %></a>
-          <li class=""><%- comment.text %>
-
-        <!-- <style>
-          ul *{
-            list-style-image: url('<%= comment.avatar %>');
-            
-          }
-          
-        </style> -->
-
-          </li>
+          <li class=""><%- comment.text %> </li>
           <% }) %>
         </ul>
+    
+          
         <% if (user) { %>
-        <div class="card-action">
+        <div class="addcomm">
           <form action="/<%= baller._id%>/comments" method="POST">
             <input type="text" name="text" class="white-text">
 
-            <button type="submit" class="btn white-text">Add Comment</button>
+            <button type="submit" class="btn-comment">Add Comment</button>
           </form>
         </div>
         <% } %>

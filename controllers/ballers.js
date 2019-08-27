@@ -57,11 +57,12 @@ function index(req, res, next) {
 
 function addComment(req, res, next) {
   Baller.findById(req.params.id, function (err, baller) {
-    baller.comments.push(req.body);
     Baller.findById(req.user.id, function (err, baller2) {
-let name = baller2.name
-      // baller.comments.push(name)
-      console.log(typeof name)
+      req.body.name = baller2.name
+      baller.comments.push(req.body);
+// let name = baller2.name
+//       baller.comments.commenter.push(name)
+      console.log(baller)
       baller.save(function (err) {
         res.redirect('/ballers');
 

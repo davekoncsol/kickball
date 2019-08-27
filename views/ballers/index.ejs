@@ -46,7 +46,9 @@
               </div>
               <ul class="collection">
                 <% baller.comments.forEach(function(comment) { %>
-                  <li class="collection-item blue-grey-text text-darken-2"><%- comment.text %> 
+                  <li class="collection-item blue-grey-text text-darken-2"><%- comment.text %> -
+                     <%-comment.name %>
+                   
                   
                   </li>
                 <% }) %>
@@ -55,6 +57,7 @@
                 <div class="card-action">
                   <form action="/<%= baller._id%>/comments" method="POST">
                     <input type="text" name="text" class="white-text">
+                    
                     <button type="submit" class="btn white-text">Add Comment</button>
                   </form>
                 </div>

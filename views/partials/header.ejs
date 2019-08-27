@@ -12,20 +12,17 @@
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav>
-          <div class="nav-wrapper">
-            <a href="/ballers" class="brand-logo left">All Ballers</a>
-            <ul class="right">
-              <li>
+    
+        <nav class="navbar">
+          <div>
+
+            <a href="/ballers" class="brand-logo left">All Ballers</a></div>
+            <div>
               <% if (user) { %>
                 <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
               <% } else { %>
                 <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
               <% } %>
-              </li>
-            </ul>
-       
     
           </div>
         </nav>

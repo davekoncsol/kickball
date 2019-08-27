@@ -2,23 +2,16 @@
 
   <div class="container">
     <div id="search-row" class="row">
-      <h2 class="col s4 blue-grey-text text-darken-2">ballers</h2>
+      <h2 class="">ballers</h2>
       <form action="/ballers" method="GET">
         <div class="col s3 offset-s3">
           <!-- search -->
           <div class="input-field">
             <input id="search" type="search" name="name" placeholder="search name" value="<%= name %>" autocomplete="off">
-            <i class="material-icons">close</i>
+           
           </div>
         </div>
         <div class="col s2">
-          <p>
-            <label for="sort-team">
-              <input name="sort" type="radio" id="sort-team" value="team" class="with-gap"
-                <%= sortKey === 'team' ? 'checked' : '' %> >
-              <span>Sort by team</span>
-            </label>
-          </p>
           <p>
             <label for="sort-name">
               <input name="sort" type="radio" id="sort-name" value="name" class="with-gap"
@@ -29,7 +22,7 @@
         </div>
       </form>
     </div>
-    <div class="row">
+    <div class="info">
       <div id="ballers" class="col s12">
         <% ballers.forEach(function(baller) { %>
           <div class="card blue-grey">
@@ -46,8 +39,10 @@
               </div>
               <ul class="collection">
                 <% baller.comments.forEach(function(comment) { %>
-                  <li class="collection-item blue-grey-text text-darken-2"><%- comment.text %> -
-                     <%-comment.name %>
+                  <img class ="small-avatar" src="<%= comment.avatar %>">
+                  <a href="/ballers/<%= comment.ballerId %>">
+                  <%-comment.name %></a>
+                  <li class=""><%- comment.text %>
                    
                   
                   </li>

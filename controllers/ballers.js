@@ -59,6 +59,9 @@ function addComment(req, res, next) {
   Baller.findById(req.params.id, function (err, baller) {
     Baller.findById(req.user.id, function (err, baller2) {
       req.body.name = baller2.name
+      req.body.avatar = baller2.avatar
+      req.body.ballerId = baller2._id
+
       baller.comments.push(req.body);
 // let name = baller2.name
 //       baller.comments.commenter.push(name)

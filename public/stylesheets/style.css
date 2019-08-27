@@ -69,6 +69,7 @@ a {
 ul {
   text-align: right;
   text-overflow: clip ;
+  list-style-type:none;
   
   
 }

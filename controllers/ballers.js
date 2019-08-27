@@ -117,5 +117,11 @@ function update(req, res) {
 }
 
 function delComment(req, res, next) {
+  Baller.findOne({'comments._id': req.params.id}, function(err, baller){
+    baller.comments.id(req.params.id).remove();
+    baller.save(function(err) {
+      res.redirect('/ballers')
+    })
+  })
 
 }

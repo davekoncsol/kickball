@@ -13,7 +13,7 @@ router.put('/ballers/:id', ballersCtrl.update)
 // POST /facts
 // We will already have access to the logged in student on
 // the server, therefore do not use: /ballers/:id/facts
-router.post('/:id/comments', ballersCtrl.addComment);
+router.post('/comments/:id', ballersCtrl.addComment);
 
 // DELETE /Comments/:id
 router.delete('/comments/:id', ballersCtrl.delComment);

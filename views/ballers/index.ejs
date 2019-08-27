@@ -25,17 +25,17 @@
     <div class="info">
       <div id="ballers" class="col s12">
         <% ballers.forEach(function(baller) { %>
-          <div class="card blue-grey">
-            <div class="card-content white-text">
-              <div>
-                <span class="card-title">
-                  
-                  <span class="baller-name"><%= baller.name %></span>
-                  <img class="avatar" src="<%= baller.avatar %>">
+          <div class="comments">
+            
+              <div class="commenthead">
+                
+                <img class="avatar" src="<%= baller.avatar %>">
+                <a href="/ballers/<%= baller._id %>">
+                <span class="baller-name"><%= baller.name %></span></a>
                   <% if (baller.team) { %><span class="badge white"> 
                     TEAM:<%= baller.team %></span><% } %>
-                </span>
-                <a href="/ballers/<%= baller._id %>">Player Profile</a>
+                
+                
               </div>
               <ul class="collection">
                 <% baller.comments.forEach(function(comment) { %>
@@ -57,7 +57,7 @@
                   </form>
                 </div>
               <% } %>
-            </div>
+            
           </div>
         <% }) %>
       </div>

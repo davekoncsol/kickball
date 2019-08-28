@@ -18,7 +18,8 @@ var ballerSchema = new mongoose.Schema({
     hometown: String,
     avatar: String,
     comments: [commentSchema],
-    googleId: String
+    googleId: String,
+    favDrink: String
   }, {
     timestamps: true
   });

@@ -45,14 +45,14 @@
             <%-comment.name %></a>
           <li class=""><%- comment.text %>
             <% if (user) { %>
-              <% if ((baller._id.equals(user && user._id)) || (comment.ballerId.toString() == user._id.toString())) { %>
-              <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST" class="secondary-content">
-                <button type="submit" class="btn-small red-text">X</button>
-              </form>
-              <% } %>
+            <% if ((baller._id.equals(user && user._id)) || (comment.ballerId.toString() == user._id.toString())) { %>
+            <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST" class="secondary-content">
+              <button type="submit" class="btn-small red-text">X</button>
+            </form>
+            <% } %>
             <% } else { %>
-                
-              <% } %>
+
+            <% } %>
           </li>
 
           <% }) %>
@@ -68,12 +68,14 @@
             <button type="submit" class="btn-comment">Add Comment</button>
           </form>
         </div>
+        <% } else { %>
+        <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google to Comment</a>
         <% } %>
-
       </div>
       <% }) %>
     </div>
   </div>
 </div>
+
 
 <%- include('../partials/footer') %>

@@ -113,3 +113,11 @@ ul {
   .logos *{
     height: 100px;
   }
+
+  .profile{
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr  1fr 1fr;
+    
+
+  }

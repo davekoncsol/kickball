@@ -1,18 +1,26 @@
 <%- include('../partials/header') %>
-
+<div>
   <h1>Baller Bio</h1>
-  <form id="new-form" action="/ballers/<%= baller._id %>?_method=PUT" method="POST" autocomplete="off">
-    <label>Team</label>
-    <select name="team">
-    <option value="Suck My Kick">Suck My Kick</option>
-    <option value="Balls and Dolls">Balls and Dolls</option>
-    <option value="Lickballers">Lickballers</option>
-    <option value="Westside 911">Westside 911</option>
-  </select>
-  <label>Runs:</label>
-  <input type="text" name="runs">
-   
-    <button type="submit">Update Bio</button>
-  </form>
+  <div>
+    <form id="new-form" action="/ballers/<%= baller._id %>?_method=PUT" method="POST" autocomplete="off">
+      <label>Team</label>
+      <select name="team">
+        <option value="Suck My Kick">Suck My Kick</option>
+        <option value="Balls and Dolls">Balls and Dolls</option>
+        <option value="Lickballers">Lickballers</option>
+        <option value="Westside 911">Westside 911</option>
+      </select>
+      <label>Runs:</label>
+      <input type="text" name="runs" value="<%= baller.runs%>">
+      <label>Hometown:</label>
+      <input type="text" name="hometown" value="<%= baller.hometown%>">
+      <label>Fun Fact:</label>
+      <input type="text" name="funFacts" value="<%= baller.funFacts%>">
+      <label>Favorite Drink:</label>
+      <input type="text" name="favDrink" value="<%= baller.favDrink%>">
 
-  <%- include('../partials/footer') %>
+      <button type="submit">Update Bio</button>
+    </form>
+  </div>
+</div>
+<%- include('../partials/footer') %>

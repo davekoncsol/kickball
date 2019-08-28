@@ -11,7 +11,7 @@ module.exports = {
 }
 
 function show(req, res) {
-  Baller.findById(req.params.id).populate('comments').exec(function (err, baller) {
+  Baller.findById(req.params.id).exec(function (err, baller) {
     let modelQuery = req.query.name ? {
       name: new RegExp(req.query.name, 'i')
     } : {};
@@ -63,18 +63,13 @@ function addComment(req, res, next) {
       req.body.ballerId = baller2._id
 
       baller.comments.push(req.body);
-// let name = baller2.name
-//       baller.comments.commenter.push(name)
+      // let name = baller2.name
+      //       baller.comments.commenter.push(name)
       console.log(baller)
       baller.save(function (err) {
-        res.redirect('/ballers');
+        res.redirect('back');
 
-
-      }) 
-
-
-      
-
+      })
 
     })
   })
@@ -82,14 +77,14 @@ function addComment(req, res, next) {
 }
 
 function edit(req, res) {
-  Baller.findById(req.params.id).populate('comments').exec(function (err, baller) {
+  Baller.findById(req.params.id).exec(function (err, baller) {
     let modelQuery = req.query.name ? {
       name: new RegExp(req.query.name, 'i')
     } : {};
     let sortKey = req.query.sort || 'name';
     Baller.find(modelQuery)
       .sort(sortKey).exec(function (err, ballers) {
-        
+
         if (err) return next(err);
         res.render('ballers/edit', {
           title: 'Player Page',
@@ -107,7 +102,7 @@ function update(req, res) {
   Baller.findByIdAndUpdate(req.params.id, req.body, {
     new: true
   }).then(function (baller) {
-    res.status(200).json(puppy)
+    res.status(200).json(baller)
   })
   console.log(req.body)
   console.log(req.body.value)
@@ -117,10 +112,12 @@ function update(req, res) {
 }
 
 function delComment(req, res, next) {
-  Baller.findOne({'comments._id': req.params.id}, function(err, baller){
+  Baller.findOne({
+    'comments._id': req.params.id
+  }, function (err, baller) {
     baller.comments.id(req.params.id).remove();
-    baller.save(function(err) {
-      res.redirect('/ballers')
+    baller.save(function (err) {
+      res.redirect('back')
     })
   })
 

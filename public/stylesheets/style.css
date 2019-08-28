@@ -30,9 +30,9 @@ a:hover {
 }
 
 .small-avatar {
-  border: black solid;
+  
   border-radius: 50%;
-  height: 40px;
+  height: 46px;
 }
 
 .navbar {
@@ -63,32 +63,42 @@ a:hover {
 .info {
   grid-column: span 3;
   display:flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .comments {
   display: grid;
   grid-template-rows: 105px  ;
+ justify-self: center;
 }
 
 ul {
-  text-align: right;
+  
+  text-align: left;
   word-wrap: break-word;
   list-style-type: none;
-  width:760px;
+  width:600px;
   
   
+}
+
+.ul-div {
+  display: flex;
+  justify-content: center;
 }
 
 .commenthead{
   grid-row: span 1;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  border-bottom: solid grey;
+  
+
 
 }
-.btm-comment {
+.btn-comment {
 
     background-color: white;
     color: black;
@@ -120,4 +130,28 @@ ul {
     grid-template-columns: 1fr  1fr 1fr;
     
 
+  }
+
+  .user-comment-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:rgba(72, 125, 232, 0.459);
+    border-radius: 10px;
+   
+   
+  }
+
+  .user-comment-head-text {
+    display:flex;
+    align-items: center;
+    
+  }
+
+  li {
+    padding: 20px;
+    background:rgba(231, 235, 243, 0.459);
+    border-radius: 10px;
+    border: solid grey;
+    
   }

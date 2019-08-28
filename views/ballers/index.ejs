@@ -43,19 +43,23 @@
           <img class="small-avatar" src="<%= comment.avatar %>">
           <a href="/ballers/<%= comment.ballerId %>">
             <%-comment.name %></a>
-          <li class=""><%- comment.text %> 
-            <% if (baller._id.equals(user && user._id)) { %>
+          <li class=""><%- comment.text %>
+            <% if (user) { %>
+              <% if ((baller._id.equals(user && user._id)) || (comment.ballerId.toString() == user._id.toString())) { %>
               <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST" class="secondary-content">
                 <button type="submit" class="btn-small red-text">X</button>
               </form>
-            <% } %>
+              <% } %>
+            <% } else { %>
+                
+              <% } %>
           </li>
 
           <% }) %>
         </ul>
 
-    
-          
+
+
         <% if (user) { %>
         <div class="addcomm">
           <form action="/comments/<%= baller._id%>" method="POST">

@@ -8,8 +8,10 @@ body {
   
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 200px 800px;
-  
+  grid-template-rows: 150px 800px;
+  background: url('/images/kickball-day-1.jpg');
+ background-attachment: fixed;
+ background-size: cover;
   
 }
 
@@ -39,9 +41,10 @@ a:hover {
   font-size: 40px;
   display: flex;
   grid-column: span 2;
-  border: solid black 10px;
+  border-bottom: solid grey 5px;
   justify-content: space-around;
  align-items: center;
+ 
 }
 
 .container {
@@ -57,7 +60,7 @@ a:hover {
   justify-content: flex-end;
   align-items: center;
   padding: 25px;
-
+  
 }
 
 .info {
@@ -143,8 +146,10 @@ ul {
     display: grid;
     grid-template-columns: 1fr  1fr;
     
+    
 
   }
+
 
   .profile-header  {
     display: flex;
@@ -156,6 +161,23 @@ ul {
 
   .profile-header * {
     margin: 40px;
+  }
+
+  .profile-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+  .profile-info * {
+    margin: 10px;
+    text-align: center;
+    font-size: 25px;
+    background:rgba(231, 235, 243, 0.459);
+    border-radius: 10px;
+    border: solid grey;
+    
   }
 
   .profile-comments-header {

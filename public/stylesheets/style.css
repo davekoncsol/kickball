@@ -84,8 +84,10 @@ ul {
 }
 
 .ul-div {
+
   display: flex;
   justify-content: center;
+ 
 }
 
 .commenthead{
@@ -104,16 +106,28 @@ ul {
     color: black;
     border: 2px solid #555555;
     text-align: right;
+    height: 40px;
+    width: 100px;
   }
   
   .btn-comment:hover {
     background-color: #555555;
     color: white;
+  
   }
 
-  .addcomm {
+  .input-comment-box {
+    height: 40px;
+    border: 2px solid #555555;
+    width: 300px;
+  }
+
+  .addcomm *{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    
   }
   .baller-name, .baller-team{
     font-size: 40px;
@@ -154,4 +168,8 @@ ul {
     border-radius: 10px;
     border: solid grey;
     
+  }
+
+  .login-to-comment {
+    text-align: center;
   }

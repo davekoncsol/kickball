@@ -70,13 +70,15 @@
         <% if (user) { %>
         <div class="addcomm">
           <form action="/comments/<%= baller._id%>" method="POST">
-            <input type="text" name="text" class="white-text">
+            <input type="text" name="text" class="input-comment-box">
 
             <button type="submit" class="btn-comment">Add Comment</button>
           </form>
         </div>
         <% } else { %>
-        <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google to Comment</a>
+          
+        <a href="/auth/google" class="login-to-comment"><i class="material-icons left">vpn_key</i>Login with Google to Comment</a>
+
         <% } %>
       </div>
       <% }) %>

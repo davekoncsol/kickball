@@ -161,6 +161,7 @@ ul {
   .profile-comments-header {
     font-size: 60px;
     margin: 0;
+    border-bottom: solid grey;
   }
   .profile-comments {
     grid-column: span 2;
@@ -174,7 +175,7 @@ ul {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /* background:rgba(197, 5, 255, 0.562); */
+  
     border-radius: 10px;
    
    
@@ -187,6 +188,7 @@ ul {
   }
 
   li {
+  
     padding: 20px;
     background:rgba(231, 235, 243, 0.459);
     border-radius: 10px;

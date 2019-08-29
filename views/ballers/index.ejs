@@ -38,33 +38,33 @@
 
         </div>
         <div class="ul-div">
-        <ul class="">
-          <% baller.comments.forEach(function(comment) { %>
-          <div class="user-comment-head">
-            <div>
-              <img class="small-avatar" src="<%= comment.avatar %>">
+          <ul class="">
+            <% baller.comments.forEach(function(comment) { %>
+            <div class="user-comment-head">
+              <div>
+                <img class="small-avatar" src="<%= comment.avatar %>">
 
+              </div>
+              <div class="user-comment-head-text">
+                <a href="/ballers/<%= comment.ballerId %>"><%-comment.name %></a>
+                <% if (user) { %>
+                <% if ((baller._id.equals(user && user._id)) || (comment.ballerId.toString() == user._id.toString())) { %>
+                <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST" class="secondary-content">
+                  <button type="submit" class="btn-small red-text">X</button>
+                </form>
+                <% } %>
+                <% } else { %>
+
+                <% } %>
+              </div>
             </div>
-            <div class="user-comment-head-text">
-          <a href="/ballers/<%= comment.ballerId %>"><%-comment.name %></a>
-          <% if (user) { %>
-            <% if ((baller._id.equals(user && user._id)) || (comment.ballerId.toString() == user._id.toString())) { %>
-            <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST" class="secondary-content">
-              <button type="submit" class="btn-small red-text">X</button>
-            </form>
-            <% } %>
-            <% } else { %>
+            <li class=""><%- comment.text %>
 
-            <% } %>
-          </div>
-          </div>
-          <li class=""><%- comment.text %>
-           
-          </li>
+            </li>
 
-          <% }) %>
-        </ul>
-      </div>
+            <% }) %>
+          </ul>
+        </div>
 
 
         <% if (user) { %>
@@ -76,8 +76,9 @@
           </form>
         </div>
         <% } else { %>
-          
-        <a href="/auth/google" class="login-to-comment"><i class="material-icons left">vpn_key</i>Login with Google to Comment</a>
+
+        <a href="/auth/google" class="login-to-comment"><i class="material-icons left">vpn_key</i>Login with Google to
+          Comment</a>
 
         <% } %>
       </div>

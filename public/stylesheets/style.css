@@ -141,16 +141,40 @@ ul {
   .profile{
     grid-column: span 2;
     display: grid;
-    grid-template-columns: 1fr  1fr 1fr;
+    grid-template-columns: 1fr  1fr;
     
 
   }
 
+  .profile-header  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  
+  }
+
+  .profile-header * {
+    margin: 40px;
+  }
+
+  .profile-comments-header {
+    font-size: 60px;
+    margin: 0;
+  }
+  .profile-comments {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   .user-comment-head {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    background:rgba(72, 125, 232, 0.459);
+    /* background:rgba(197, 5, 255, 0.562); */
     border-radius: 10px;
    
    

@@ -1,30 +1,33 @@
 <%- include('../partials/header') %>
 
 <div class="profile">
-  <img class="avatar" src="<%= baller.avatar %>">
-
+  <div class="profile-header">
+    <img class="avatar" src="<%= baller.avatar %>">
+    <h1><%= baller.name %> </h1>
+  </div>
   <div>
-    <h3> Name: <%= baller.name %> </h3>
     <h3> Team: <%= baller.team %> </h3>
     <h3> Runs: <%= baller.runs %> </h3>
     <h3> Hometown: <%= baller.hometown %> </h3>
     <h3> Fun Facts: <%= baller.funFacts %> </h3>
-    <h3> Favorite: <%= baller.favDrink %> </h3>
+    <h3> Favorite Drink: <%= baller.favDrink %> </h3>
     <% if (user) { %>
-      <% if (baller._id.equals(user && user._id)) { %>
-      <a href="/ballers/<%= baller._id %>/edit">Update Profile</a>
-      <% } else { %>
-      <% } %>
-      <% } %>
+    <% if (baller._id.equals(user && user._id)) { %>
+    <a href="/ballers/<%= baller._id %>/edit">Update Profile</a>
+    <% } else { %>
+    <% } %>
+    <% } %>
   </div>
 
-  <div>
-    <h3>Comments:</h3>
+  <div class="profile-comments">
+    <h1 class="profile-comments-header">COMMENTS</h1>
     <ul class="k">
       <% baller.comments.forEach(function(comment) { %>
-      <img class="small-avatar" src="<%= comment.avatar %>">
-      <a href="/ballers/<%= comment.ballerId %>">
-        <%-comment.name %></a>
+      <div class='user-comment-head'>
+        <img class="small-avatar" src="<%= comment.avatar %>">
+        <a href="/ballers/<%= comment.ballerId %>">
+          <%-comment.name %></a>
+      </div>
       <li class=""><%- comment.text %>
         <% if (user) { %>
         <% if ((baller._id.equals(user && user._id)) || (comment.ballerId.toString() == user._id.toString())) { %>

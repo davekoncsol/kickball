@@ -6,11 +6,13 @@ function addListeners() {
   for (var i = 0; i < head.length; i++) {
     head[i].addEventListener('click', click)
   }
+  let hidebutton = document.getElementsByClassName('btn-hide-comments')
+  // console.log(thiss[0])
+  for (var i = 0; i < hidebutton.length; i++) {
+    hidebutton[i].addEventListener('click', hideComments)
+  }
 
-  // thiss.forEach(t => {
-  //   t.addEventListener('click', click)
-  // })
-  // thiss.addEventListener('click', click);
+
 
 }
 
@@ -21,6 +23,7 @@ function click(evt) {
 
 }
 
-function click2() {
-
+function hideComments(evt) {
+  console.log(evt.target.previousElementSibling)
+  evt.target.parentElement.parentElement.style.display = 'none';
 }

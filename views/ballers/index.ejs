@@ -39,7 +39,7 @@
 
 
         </div>
-        <div id = "id"class="ul-div">
+        <div id="id" class="ul-div">
           <ul class="">
             <% baller.comments.forEach(function(comment) { %>
             <div class="user-comment-head">
@@ -66,8 +66,10 @@
 
             <% }) %>
           </ul>
+          <div>
+            <button class="btn-hide-comments">Hide Comments</button>
+          </div>
         </div>
-
 
         <% if (user) { %>
         <div class="addcomm">
@@ -92,4 +94,3 @@
 
 
 <%- include('../partials/footer') %>
-

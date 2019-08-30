@@ -88,7 +88,7 @@ ul {
 
 .ul-div {
 
-  display: flex;
+  display: none;
   justify-content: center;
  
 }

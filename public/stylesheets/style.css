@@ -1,18 +1,20 @@
-html, * {
-  font-family: 'Roboto', sans-serif;;
+html,
+* {
+  font-family: 'Roboto', sans-serif;
+  ;
   box-sizing: border-box;
 }
 
 body {
-  
-  
+
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 150px 800px;
   background: url('/images/kickball-day-1.jpg');
- background-attachment: fixed;
- background-size: cover;
-  
+  background-attachment: fixed;
+  background-size: cover;
+
 }
 
 
@@ -22,6 +24,7 @@ a {
   text-decoration: none;
   text-shadow: 2px 2px 5px #555555;
 }
+
 a:hover {
   text-decoration: underline;
 }
@@ -33,7 +36,7 @@ a:hover {
 }
 
 .small-avatar {
-  
+
   border-radius: 50%;
   height: 46px;
 }
@@ -44,8 +47,8 @@ a:hover {
   grid-column: span 2;
   border-bottom: solid grey 5px;
   justify-content: space-around;
- align-items: center;
- 
+  align-items: center;
+
 }
 
 .container {
@@ -61,164 +64,177 @@ a:hover {
   justify-content: flex-end;
   align-items: center;
   padding: 25px;
-  
+
 }
 
 .info {
   grid-column: span 3;
-  display:flex;
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .comments {
   display: grid;
-  grid-template-rows: 105px  ;
- justify-self: center;
+  grid-template-rows: 105px;
+  justify-self: center;
 }
 
 ul {
-  
+
   text-align: left;
   word-wrap: break-word;
   list-style-type: none;
-  width:600px;
-  
-  
+  width: 600px;
+
+
 }
 
 .ul-div {
 
   display: none;
   justify-content: center;
- 
+
 }
 
-.commenthead{
+.commenthead {
   grid-row: span 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: solid grey;
-  
 
 
 }
+
+.commenthead:hover {
+  cursor: pointer;
+}
+
 .btn-comment {
 
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-    text-align: right;
-    height: 40px;
-    width: 100px;
-  }
-  
-  .btn-comment:hover {
-    background-color: #555555;
-    color: white;
-  
-  }
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  text-align: right;
+  height: 40px;
+  width: 100px;
+}
 
-  .input-comment-box {
-    height: 40px;
-    border: 2px solid #555555;
-    width: 300px;
-  }
+.btn-comment:hover {
+  background-color: #555555;
+  color: white;
 
-  .addcomm *{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    
-    
-  }
-  .baller-name, .baller-team{
-    font-size: 40px;
+}
 
-  }
+.input-comment-box {
+  height: 40px;
+  border: 2px solid #555555;
+  width: 300px;
+}
 
-  .logos *{
-    height: 100px;
-  }
-
-  .profile{
-    grid-column: span 2;
-    display: grid;
-    grid-template-columns: 1fr  1fr;
-    
-    
-
-  }
+.addcomm * {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 
 
-  .profile-header  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-  
-  }
+}
 
-  .profile-header * {
-    margin: 40px;
-  }
+.baller-name,
+.baller-team {
+  font-size: 40px;
 
-  .profile-info {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    
-  }
-  .profile-info * {
-    margin: 10px;
-    text-align: center;
-    font-size: 25px;
-    background:rgba(231, 235, 243, 0.459);
-    border-radius: 10px;
-    
-    
-  }
+}
 
-  .profile-comments-header {
-    font-size: 60px;
-    margin: 0;
-    border-bottom: solid grey;
-  }
-  .profile-comments {
-    grid-column: span 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+.logos * {
+  height: 100px;
+}
 
-  .user-comment-head {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-radius: 10px;
-   
-   
-  }
-  
+.profile {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-  .user-comment-head-text {
-    display:flex;
-    align-items: center;
-    
-  }
 
-  li {
-  
-    padding: 20px;
-    background:rgba(231, 235, 243, 0.459);
-    border-radius: 10px;
-    border: solid grey;
-    
-  }
 
-  .login-to-comment {
-    text-align: center;
-  }
+}
+
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.profile-header * {
+  margin: 40px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.profile-info * {
+  margin: 10px;
+  text-align: center;
+  font-size: 25px;
+  background: rgba(231, 235, 243, 0.459);
+  border-radius: 10px;
+
+
+}
+
+.profile-comments-header {
+  font-size: 60px;
+  margin: 0;
+  border-bottom: solid grey;
+}
+
+.profile-comments {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.user-comment-head {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+
+
+}
+
+
+.user-comment-head-text {
+  display: flex;
+  align-items: center;
+
+}
+
+li {
+
+  padding: 20px;
+  background: rgba(231, 235, 243, 0.459);
+  border-radius: 10px;
+  border: solid grey;
+
+}
+
+.login-to-comment {
+  text-align: center;
+}
+
+button{
+  background: rgba(128, 128, 128, 0.555);
+  color: white;
+}

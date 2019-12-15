@@ -18,11 +18,12 @@ body {
 
 
 a {
-  color: #00B7FF;
+  color: white;
   text-decoration: none;
+  text-shadow: 2px 2px 5px #555555;
 }
 a:hover {
-  text-shadow: 2px 2px 5px #555555;
+  text-decoration: underline;
 }
 
 .avatar {
@@ -197,11 +198,11 @@ ul {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-  
     border-radius: 10px;
    
    
   }
+  
 
   .user-comment-head-text {
     display:flex;
